@@ -1,0 +1,29 @@
+{
+  "name": "test-node-with-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=local nodemon index.js",
+    "test": "chmod +x ./bin/test.sh && NODE_ENV=test-docker ./bin/test.sh",
+    "test-local": "NODE_ENV=local mocha --recursive --exit",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "convict": "^6.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  }
+}

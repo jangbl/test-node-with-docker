@@ -1,0 +1,9 @@
+{
+  "db": {
+    "port": 5432,
+    "user": "run whoami in your terminal to find out your username",
+    "name": "test-node-with-docker",
+    "host": "localhost",
+    "password": null
+  }
+}
