@@ -5,7 +5,7 @@ class DevService {
     this.devDao = devDao;
   }
 
-  createDev({ email, firstName }) {
+  createDev(email, firstName) {
     return this.devDao.createDev(email, firstName);
   }
 }

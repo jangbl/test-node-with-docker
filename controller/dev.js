@@ -8,13 +8,20 @@ class DevController {
   }
 
   async createDev(req, res) {
-    // in prod, you'd do request schema validation before trying to access
-    // the service level
+    // in prod, you'd do additional request validation
+    // like checking if email looks like an email
+    const { email, firstName } = req.body;
+    if (!email || !firstName) {
+      return res
+        .status(400)
+        .json('you need to privde an email and a first name');
+    }
+
     // just left it as it is to keep the tutorial simple
     // you would need to check if firstName and email is passed and if
     // the email looks like a valid email
     try {
-      const result = await this.devService.createDev(req.body);
+      const result = await this.devService.createDev(email, firstName);
       res.status(201).json(result);
     } catch (err) {
       // in prod, don't use console.error because it is not async
