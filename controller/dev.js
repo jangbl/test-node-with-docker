@@ -11,6 +11,8 @@ class DevController {
     // in prod, you'd do request schema validation before trying to access
     // the service level
     // just left it as it is to keep the tutorial simple
+    // you would need to check if firstName and email is passed and if
+    // the email looks like a valid email
     try {
       const result = await this.devService.createDev(req.body);
       res.status(201).json(result);
