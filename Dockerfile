@@ -6,7 +6,7 @@ COPY package.json .
 
 COPY package-lock.json .
 
-RUN npm install --production
+RUN npm install --only=production
 
 COPY . .
 
