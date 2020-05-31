@@ -3,7 +3,7 @@ const convict = require('convict');
 const config = convict({
   env: {
     doc: 'The application environment.',
-    format: ['local', 'test', 'test-docker'],
+    format: ['local', 'test-docker'],
     default: 'local',
     env: 'NODE_ENV',
   },
