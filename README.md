@@ -1,6 +1,7 @@
 # Test a Node.js server with a database with Docker and docker-compose
 
 # 2. How to run this application
+
 ## 2.1. Running the project locally
 
 You can run the project locally with your own local [Postgres](https://www.postgresql.org) instance
@@ -12,6 +13,7 @@ npm run dev
 Make sure to update the configuration app with your database credentials in the `.config/local.json` file.
 
 ## 2.2. Running with docker compose
+
 ### 2.2.1 docker-compose up
 
 Running:
@@ -62,6 +64,44 @@ docker-compose stop
 I.e. if you start up the container again, the database will contain the data you have put in before.
 
 Please refer to the above section on the clean docker-compose section on how to clean up all unused containers.
+
+## 2.2. Running the webserver with docker but accessing db on host machine
+
+If you want to to only run the webapp in a docker container, you need to adapt your configuration first.
+
+Since the docker container itself is isolated, setting the database host to `localhost` would result in the container trying to connect to itself to connect to the database.
+
+To connect to the database running on your host machine, you need to set the host name to `host.docker.internal`.
+
+Change the `hostname` field under the `db` object inside the `./config.local.json` like so.
+
+```
+{
+  "db": {
+    "host": "host.docker.internal"
+  }
+}
+```
+
+You can leave the remaining config as it was.
+
+This is a special DNS entry within the container that allows the container to connect to your host machine. Please refer to the [documentation](https://docs.docker.com/docker-for-mac/networking/#httphttps-proxy-support) for more details.
+
+Once you have updated your config, you need to build an image and start a container from it.
+
+Execute the following command from the root directory of the project (where the `Dockerfile` is located)
+
+```
+docker image build -t productioncoder/test-node-with-docker:local .
+```
+
+After that you can start a container
+
+```
+docker container run -p 8080:8080 productioncoder test-node-with-docker:local
+```
+
+The `-p` flag publishes the port from the docker container to your host machine.
 
 # 3 Testing
 
