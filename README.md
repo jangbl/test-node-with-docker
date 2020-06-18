@@ -1,5 +1,15 @@
 # Test a Node.js server with a database with Docker and docker-compose
 
+This repository contains sample code on how to a Node.js app with Docker and docker-compose.
+
+<h3 align="center">Please help this repo with a ⭐️ if you find it useful! 😁</h3>
+
+This repository is part of the [Test Node with Docker](https://www.youtube.com/playlist?list=PL1Nml43UBm6eTkjJtAPfdfjk-x2I_1r-Y) tutorial series provided by [productioncoder.com](https://productioncoder.com/).
+
+[![Test Node with Docker](images/test-node-with-docker.png)](https://www.youtube.com/playlist?list=PL1Nml43UBm6eTkjJtAPfdfjk-x2I_1r-Y)
+
+For updates, please reach out to [@productioncoder](https://twitter.com/productioncoder) on Twitter.
+
 # 2. How to run this application
 
 ## 2.1. Running the project locally
