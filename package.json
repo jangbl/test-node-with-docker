@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=local nodemon index.js",
-    "test": "chmod +x ./bin/test.sh && NODE_ENV=test-docker ./bin/test.sh",
     "test-local": "NODE_ENV=local mocha --recursive --exit",
     "start": "node index.js"
   },
