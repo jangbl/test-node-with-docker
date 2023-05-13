@@ -8,7 +8,7 @@ This repository is part of the [Test Node with Docker](https://www.youtube.com/p
 
 [![Test Node with Docker](images/test-node-with-docker.png)](https://www.youtube.com/playlist?list=PL1Nml43UBm6eTkjJtAPfdfjk-x2I_1r-Y)
 
-For updates, please reach out to [@productioncoder](https://twitter.com/productioncoder) on Twitter.
+For updates, please reach out to [@_jgoebel](https://twitter.com/_jgoebel) on Twitter.
 
 # 2. How to run this application
 
